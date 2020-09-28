@@ -1,0 +1,5 @@
+.env
+.idea/*
+__pycache__/
+draft.py
+create_fixtures.py

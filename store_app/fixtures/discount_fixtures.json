@@ -1,0 +1,10 @@
+[
+  {
+    "model": "store_app.discount",
+    "pk": 1,
+    "fields": {
+      "title": "older than 30 days",
+      "size": 20
+    }
+  }
+]

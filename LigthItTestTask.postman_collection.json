@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "82f7c573-6f27-4e00-b029-f70dfc25b1b1",
+		"name": "LigthIt Test Task",
+		"description": "Description of API methods for an imaginary hardware store.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "new_user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "new_user_password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"register"
+					]
+				},
+				"description": "New user registration.\n\nBODY-params:\nusername (str) - username\npassword (str) - password"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order (Cashier)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cashier",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cashier",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/order/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"order",
+						""
+					]
+				},
+				"description": "POST-request to create order instance.\n\nBODY-params:\nproduct (int) - product id"
+			},
+			"response": []
+		},
+		{
+			"name": "List of waiting orders (Consultant)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "consultant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "consultant",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/order/?status=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"order",
+						""
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "1"
+						}
+					]
+				},
+				"description": "GET-request to get list of orders with status \"waiting\".\n\nQUERY-params:\nstatus (str) - \"waiting\" to get list of waiting orders"
+			},
+			"response": []
+		},
+		{
+			"name": "Change order status to \"done\" (Consultant)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "consultant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "consultant",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/order/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"order",
+						"3",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "PATCH-request to change order status to \"done\", after it was processed by Consultant.\n\nBODY-params:\nstatus (str) - new status of the order. \"done\" on this step."
+			},
+			"response": []
+		},
+		{
+			"name": "List of done orders  (Cashier)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cashier",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cashier",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/order/?status=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"order",
+						""
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bill generation (Cashier)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cashier",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cashier",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/bill/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"bill",
+						"1",
+						""
+					]
+				},
+				"description": "Generation of an invoice for an order with discounts.\n\nAccepts order ID ad a required url parameter."
+			},
+			"response": []
+		},
+		{
+			"name": "Change order status to \"paid\" (Cashier)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cashier",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cashier",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/order/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"order",
+						"3",
+						""
+					]
+				},
+				"description": "PATCH-request to change order status to \"paid\", after it was paid by Client.\n\nBODY-params: status (str) - new status of the order. \"paid\" on this step."
+			},
+			"response": []
+		},
+		{
+			"name": "List of orders by date range (Accountant)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "accountant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "accountant",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/order/?start_date=01.01.2019&finish_date=24.12.2020",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"order",
+						""
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "01.01.2019"
+						},
+						{
+							"key": "finish_date",
+							"value": "24.12.2020"
+						}
+					]
+				},
+				"description": "Displaying information about orders with a date-filter."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

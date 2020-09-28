@@ -1,0 +1,117 @@
+[
+  {
+    "model": "store_app.product",
+    "pk": 1,
+    "fields": {
+      "name": "TV",
+      "price": 1000,
+      "date_of_creation": "2020-06-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 2,
+    "fields": {
+      "name": "Microvave",
+      "price": 2000,
+      "date_of_creation": "2020-06-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 3,
+    "fields": {
+      "name": "Phone",
+      "price": 500,
+      "date_of_creation": "2020-06-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 4,
+    "fields": {
+      "name": "Smartphone",
+      "price": 700
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 5,
+    "fields": {
+      "name": "PC",
+      "price": 1200
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 6,
+    "fields": {
+      "name": "Laptop",
+      "price": 1400
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 7,
+    "fields": {
+      "name": "Headphones",
+      "price": 200
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 8,
+    "fields": {
+      "name": "Table lamp",
+      "price": 100
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 9,
+    "fields": {
+      "name": "Charger",
+      "price": 150
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 10,
+    "fields": {
+      "name": "Motion Sensor",
+      "price": 350
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 11,
+    "fields": {
+      "name": "Monitor",
+      "price": 650
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 12,
+    "fields": {
+      "name": "Microphone",
+      "price": 230
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 13,
+    "fields": {
+      "name": "Iron",
+      "price": 1050
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 14,
+    "fields": {
+      "name": "Hair dryer",
+      "price": 410
+    }
+  }
+]
